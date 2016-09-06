@@ -81,7 +81,7 @@ void power_up2(struct pokemon *this_pokemon) {
 }
 ```
 
-In the above function, we are stating that `this_pokemon` is a pointer (because of the `*` operator) and that it stores a memory location when one might expect to find a `struct pokemon` type. The `struct pokemon` at that location is referenced using the syntax `*this_pokemon`.
+In the above function, we are stating that `this_pokemon` is a pointer (because of the `*` operator) and that it stores a memory location where one might expect to find a `struct pokemon` type. The `struct pokemon` at that location is referenced using the syntax `*this_pokemon`.
 
 To pass the address of the `struct` we wish to change, we would invoke this method thus:
 

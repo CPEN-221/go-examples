@@ -25,7 +25,9 @@ int     hp[MAX_POKEMON];
 
 Presumably, we would use the `i`-th index of each array to refer to the appropriate attribute for the `i`-th Pokémon in some trainer's collection.
 
-The use of a separate array for each attribute is a modeling choice. The use of four different arrays may be confusing to someone who is not familiar with a program that uses this modeling approach unless the code is well-documented. Even when the code is well documented, it is possible to make mistakes: if we had to write a method to *power-up* a Pokémon then we may update the combat power but not the hit points. In C, a solution to the problem of using different arrays is to use a language construct called [`struct`](https://en.wikipedia.org/wiki/Struct_(C_programming_language). A `struct` allows one to group multiple elements into one data type.
+The use of a separate array for each attribute is a modeling choice. The use of four different arrays may be confusing to someone who is not familiar with a program that uses this modeling approach unless the code is well-documented. Even when the code is well documented, it is possible to make mistakes: if we had to write a method to *power-up* a Pokémon then we may update the combat power but not the hit points. In C, a solution to the problem of using different arrays is to use a language construct called `struct`. A `struct` allows one to group multiple elements into one data type.
+
+> Wikipedia entry for `struct`: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 
 We would define a Polémon `struct` as follows:
 ```c

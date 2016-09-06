@@ -29,7 +29,7 @@ The use of a separate array for each attribute is a modeling choice. The use of 
 
 > Wikipedia entry for `struct`: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 
-We would define a Polémon `struct` as follows:
+We would define a Pokémon `struct` as follows:
 ```c
 struct pokemon {
     char    name[MAX_NAME_LENGTH];
@@ -48,3 +48,47 @@ struct pokemon pokemonArray[MAX_POKEMON];
 At this point it may be good to remind ourselves that we are assuming a trainer can only have a pre-defined `MAX_POKEMON` number of Pokémons. We would like to relax this assumption at a later stage.
 
 Using `struct`s allows us to group related data in a more meaningful fashion. To retrieve the combat power of the `i`-th Pokémon in `pokemonArray`, we would use `pokemonArray[i].cp`.
+
+The use of `struct`s simplifies code organization and readability, and this decreases the probability of errors. A `struct` in C allows us to define, at least _in part_, a new **datatype**.
+
+We may also want to define custom actions on the Pokémon struct that we have just discussed. A simple action would be to *power up* a Pokémon. For simplicity, let us suppose that powering up increased a Pokémon's combat power by 30 and its health points by 2.
+
+Our first attempt to define such a method may look like this:
+
+```c
+void power_up1(struct pokemon this_pokemon) {
+    this_pokemon.cp += 30;
+    this_pokemon.hp += 2;
+}
+```
+
+Would this method achieve what we want? If we called this method as follows
+
+```c
+power_up1(pokemonArray[0]);
+```
+
+then we do not get the intended effect. The Pokémon at index `0` of the array does not actually change. The reason is that a **copy** of `pokemonArray[0]` is made and is passed to the C function `power_up1`. The copy is stored at a different location in memory and it is altered but the method does not alter `pokemonArray[0]`, which is stored at a different memory address. This approach to passing parameters to functions is called **pass-by-value**, where a copy of the value is made and passed to the function.
+
+To achieve the intended effect, we will have to use **pointers**, which allow us to work with memory addresses.
+
+The C function that does work looks like this:
+
+```c
+void power_up2(struct pokemon *this_pokemon) {
+    (*this_pokemon).cp += 30;
+    (*this_pokemon).hp += 2;
+}
+```
+
+In the above function, we are stating that `this_pokemon` is a pointer (because of the `*` operator) and that it stores a memory location when one might expect to find a `struct pokemon` type. The `struct pokemon` at that location is referenced using the syntax `*this_pokemon`.
+
+To pass the address of the `struct` we wish to change, we would invoke this method thus:
+
+```c
+power_up2(&pokemonArray[0]);
+```
+
+The `&` operator passes the address of the variable that immediately follows it, and in the example above it is the address of the `pokemonArray[0]`.
+
+We will deliberately not talk more about [pointers](https://en.wikibooks.org/wiki/C_Programming/Pointers_and_arrays) here but one should experiment with pointers to understand what they enable.

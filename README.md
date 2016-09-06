@@ -8,6 +8,7 @@ To clone this GitHub repository, use `git bash` on Windows or a terminal with ma
 ```cd /c/users/gsathish/workspace```
 
 And on macOS, I might use the following command at the terminal:
+
 ```cd /Users/gsathish/workspace```
 
 Once you are in the appropriate directory, use:

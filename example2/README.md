@@ -36,8 +36,9 @@ struct pokemon {
     int     number;
     int     cp;
     int     hp;
-}
+};
 ```
+The lines of C code above do not declare a variable to be of type `struct pokemon`. They only define the `struct`.
 
 We can then define an array of Pokémon thus:
 

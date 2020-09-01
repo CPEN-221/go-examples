@@ -1,7 +1,7 @@
 # go-examples
 A sequence of examples providing a Java introduction -- using Pokemon Go for context
 
-To run through these examples, clone this GitHub repository to your local machine. Then use any editor and C compiler to experiment with the C example. For the Java examples, I recommend using Eclipse.
+To run through these examples, clone this GitHub repository to your local machine. Then use any editor and C compiler to experiment with the C example. For the Java examples, I recommend using IntelliJ IDEA.
 
 **Read the source code and play with the examples so that you are comfortable with making your own variations.**
 

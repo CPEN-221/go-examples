@@ -1,13 +1,12 @@
 ## Understanding `Pokemon.java`
 
-We start with two `import` statements:
+We start with an `import` statement:
 
 ```java
-import java.util.List;
 import java.util.ArrayList;
 ```
 
-These statememts include *standard* Java libraries. These are similar the `#include` statements in C.
+This statement includes a *standard* Java library. An `import` statement is similar to a `#include` statement in C.
 
 We then start by defining a `Pokemon` in the block that begins with 
 

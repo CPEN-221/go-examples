@@ -27,4 +27,4 @@ Once you have cloned the repository, if I add more examples to this repository, 
 
 For C programs, use your favourite editor and compiler (e.g., Microsoft Visual Studio C, `gcc`).
 
-For Java programs, I recommed using IntelliJ. You will open each example in `go-examples` as a separate project. From the Eclipse menu, you can create a new Java project and select the directory for the source code (such as `example1-java`).
+For Java programs, I recommed using IntelliJ. You will open each example in `go-examples` as a separate project. From the IntelliJ menu, you can create a new Java project and select the directory for the source code (such as `example1-java`).
